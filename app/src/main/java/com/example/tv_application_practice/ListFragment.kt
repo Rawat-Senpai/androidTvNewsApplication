@@ -15,21 +15,23 @@ class ListFragment : RowsSupportFragment() {
 
 
     private var rootAdapter: ArrayObjectAdapter =
-        ArrayObjectAdapter(ListRowPresenter(FocusHighlight.ZOOM_FACTOR_MEDIUM))
+        ArrayObjectAdapter(ListRowPresenter(FocusHighlight.ZOOM_FACTOR_LARGE))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         adapter = rootAdapter
 
         onItemViewSelectedListener = ItemViewSelectedListener()
+        onItemViewClickedListener = ItemViewClickedListener()
     }
 
     fun bindData(dataList: List<DataModel.Article>) {
 
         Log.d("checkingData2",dataList.toString())
+         val arrayObjectAdapter = ArrayObjectAdapter(ItemPresenter())
 
-        val arrayObjectAdapter = ArrayObjectAdapter(ItemPresenter())
 
         dataList.forEach{
             Log.d("checkingData3",dataList.size.toString())
