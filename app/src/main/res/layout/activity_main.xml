@@ -128,7 +128,7 @@
 
 
     <!--    androidx.fragment.app.FragmentContainerView  -->
-    <ImageView
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/list_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"

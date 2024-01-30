@@ -2,12 +2,12 @@ package com.example.tv_application_practice
 
 import android.app.Application
 import com.example.tv_application_practice.api.ApiService
-import com.example.tv_application_practice.api.NewsRepo
+import com.example.tv_application_practice.api.NewsRepository
 import com.example.tv_application_practice.api.RetrofitHelper
 
 class MyApplication :Application() {
 
-    lateinit var newsRepo: NewsRepo
+    lateinit var newsRepo: NewsRepository
 
     override fun onCreate() {
         super.onCreate()
@@ -17,6 +17,6 @@ class MyApplication :Application() {
 
     private fun init(){
         val service = RetrofitHelper.getInstance().create(ApiService::class.java)
-        newsRepo = NewsRepo(service)
+        newsRepo = NewsRepository(service)
     }
 }

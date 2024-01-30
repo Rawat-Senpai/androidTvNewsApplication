@@ -50,7 +50,7 @@ class MainActivity : FragmentActivity() {
 
         viewModel = ViewModelProvider(this,
             DetailViewModelFactory(repository)
-        ).get(DetailViewModel::class.java)
+        )[DetailViewModel::class.java]
 
 
         listFragment.setOnContentSelectedListener{
@@ -65,7 +65,14 @@ class MainActivity : FragmentActivity() {
         }
 
         progressBar.visibility=View.VISIBLE
-        viewModel.newsDetail.observe(this){ it ->
+
+        callNewsApiForData()
+
+    }
+
+    private fun callNewsApiForData() {
+
+        viewModel.generalDetails.observe(this){ it ->
 
             when (it){
                 is Response.Error -> {
@@ -76,15 +83,141 @@ class MainActivity : FragmentActivity() {
                     Log.d("When loading","Loading")
                 }
                 is Response.Success -> {
-
-                   Log.d("When success",it.data.toString())
+                    Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!)
+                        listFragment.bindData(it!!,"Business News")
                     }
                 }
             }
         }
+
+
+
+        viewModel.businessNewsDetail.observe(this){ it ->
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Tech News")
+                    }
+                }
+            }
+        }
+
+
+        viewModel.techNewsDetail.observe(this){ it ->
+
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Business News")
+                    }
+                }
+            }
+        }
+
+
+        viewModel.entertainmentDetail.observe(this){ it ->
+
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Business News")
+                    }
+                }
+            }
+        }
+
+
+        viewModel.healthDetail.observe(this){ it ->
+
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Business News")
+                    }
+                }
+            }
+        }
+
+
+        viewModel.scienceDetail.observe(this){ it ->
+
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Business News")
+                    }
+                }
+            }
+        }
+
+        viewModel.sportsDetail.observe(this){ it ->
+
+            when (it){
+                is Response.Error -> {
+                    progressBar.visibility=View.GONE
+                    Log.d("When error",it.toString())
+                }
+                is Response.Loading -> {
+                    Log.d("When loading","Loading")
+                }
+                is Response.Success -> {
+                    Log.d("When success",it.data.toString())
+                    progressBar.visibility=View.GONE
+                    it.data?.articles.let {
+                        listFragment.bindData(it!!,"Business News")
+                    }
+                }
+            }
+        }
+
+
     }
 
     private fun updateBanner(newsDetails: DataModel.Article) {

@@ -27,7 +27,7 @@ class ListFragment : RowsSupportFragment() {
         onItemViewClickedListener = ItemViewClickedListener()
     }
 
-    fun bindData(dataList: List<DataModel.Article>) {
+    fun bindData(dataList: List<DataModel.Article>, newsTitle:String) {
 
         Log.d("checkingData2",dataList.toString())
          val arrayObjectAdapter = ArrayObjectAdapter(ItemPresenter())
@@ -38,7 +38,7 @@ class ListFragment : RowsSupportFragment() {
             arrayObjectAdapter.add(it)
         }
         Log.d("checkingData4",dataList.size.toString())
-        val headerItem = HeaderItem("")
+        val headerItem = HeaderItem(newsTitle)
         val listRow = ListRow(headerItem , arrayObjectAdapter)
         rootAdapter.add(listRow)
     }
