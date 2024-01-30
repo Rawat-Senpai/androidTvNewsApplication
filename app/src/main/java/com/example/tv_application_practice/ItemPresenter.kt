@@ -14,8 +14,8 @@ class ItemPresenter : Presenter() {
 
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.item_view, parent, false)
         val params = view.layoutParams
-        params.width = getWidthInPercent(parent!!.context, 30)
-        params.height = getHeightInPercent(parent!!.context, 45)
+        params.width = getWidthInPercent(parent!!.context, 18)
+        params.height = getHeightInPercent(parent!!.context, 30)
         return ViewHolder(view)
 
     }
