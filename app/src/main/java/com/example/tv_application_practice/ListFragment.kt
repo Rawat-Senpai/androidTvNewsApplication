@@ -28,17 +28,15 @@ class ListFragment : RowsSupportFragment() {
     }
 
     fun bindData(dataList: List<DataModel.Article>, newsTitle:String) {
-
         Log.d("checkingData2",dataList.toString())
-         val arrayObjectAdapter = ArrayObjectAdapter(ItemPresenter())
-
-
+        val arrayObjectAdapter = ArrayObjectAdapter(ItemPresenter())
         dataList.forEach{
-            Log.d("checkingData3",dataList.size.toString())
             arrayObjectAdapter.add(it)
         }
-        Log.d("checkingData4",dataList.size.toString())
         val headerItem = HeaderItem(newsTitle)
+
+
+
         val listRow = ListRow(headerItem , arrayObjectAdapter)
         rootAdapter.add(listRow)
     }

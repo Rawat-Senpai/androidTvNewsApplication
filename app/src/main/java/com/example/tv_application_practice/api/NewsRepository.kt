@@ -8,40 +8,6 @@ import com.example.tv_application_practice.utils.Constants
 import com.example.tv_application_practice.utils.Constants.API_KEY
 
 
-/*
-   // General
-    private val commonNewsData = MutableLiveData<Response<DataModel>>()
-    val commonNews: LiveData<Response<DataModel>>
-    get() = commonNewsData
-
-    suspend fun getCommonNews() {
-        try {
-            val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_GENERAL);
-            if(result.body() != null)
-            {
-                commonNewsData.postValue(Response.Success(result.body()))
-
-            }else {
-                commonNewsData.postValue(Response.Error(result.errorBody().toString()))
-            }
-        }catch (e:Exception){
-            Log.d("crashHandleNewsRepo",e.toString())
-
-        }
-    }
-
- */
-/*
-    const val CATEGORY_GENERAL = "general"
-    const val CATEGORY_BUSINESS="business"
-    const val CATEGORY_TECH= "techcrunch"
-    const val CATEGORY_ENTERTAINMENT = "entertainment"
-    const val CATEGORY_HEALTH = "health"
-    const val CATEGORY_SCIENCE = "science"
-    const val CATEGORY_SPORTS = "sports"
-    const val CATEGORY_TECHNOLOGY = "technology"
- */
-
 class NewsRepository(private val service: ApiService) {
 
     //technology news

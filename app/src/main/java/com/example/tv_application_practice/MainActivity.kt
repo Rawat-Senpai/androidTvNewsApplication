@@ -86,7 +86,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"General News")
                     }
                 }
             }
@@ -107,7 +107,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Tech News")
+                        listFragment.bindData(it!!,"Business News")
                     }
                 }
             }
@@ -128,7 +128,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"Technology News")
                     }
                 }
             }
@@ -149,7 +149,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"Entertainment News")
                     }
                 }
             }
@@ -170,7 +170,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"Health News")
                     }
                 }
             }
@@ -191,7 +191,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"Science News")
                     }
                 }
             }
@@ -211,7 +211,7 @@ class MainActivity : FragmentActivity() {
                     Log.d("When success",it.data.toString())
                     progressBar.visibility=View.GONE
                     it.data?.articles.let {
-                        listFragment.bindData(it!!,"Business News")
+                        listFragment.bindData(it!!,"Sports News")
                     }
                 }
             }
