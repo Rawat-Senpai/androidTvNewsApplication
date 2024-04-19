@@ -71,7 +71,7 @@ class MainActivity : FragmentActivity() {
     }
 
     private fun callNewsApiForData() {
-
+        Log.d("When ","inside the function ")
         viewModel.generalDetails.observe(this){ it ->
 
             when (it){

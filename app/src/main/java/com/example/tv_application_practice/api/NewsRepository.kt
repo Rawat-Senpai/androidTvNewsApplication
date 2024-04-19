@@ -15,9 +15,12 @@ class NewsRepository(private val service: ApiService) {
     val technologyNews: LiveData<Response<DataModel>>
         get() = technologyNewsData
 
+
+
     suspend fun getTechnologyNewsDataNewsDetails(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_TECHNOLOGY);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 technologyNewsData.postValue(Response.Success(result.body()))
@@ -38,6 +41,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getSportsNewsDetails(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_SPORTS);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 sportsNewsData.postValue(Response.Success(result.body()))
@@ -61,6 +65,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getScienceNewsDetails(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_SCIENCE);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 scienceNewsData.postValue(Response.Success(result.body()))
@@ -84,6 +89,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getHealthNewsDetails(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_HEALTH);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 healthNewsData.postValue(Response.Success(result.body()))
@@ -107,6 +113,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getEntertainmentNewsDetails(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_ENTERTAINMENT);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 entertainmentNewsData.postValue(Response.Success(result.body()))
@@ -128,6 +135,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getGeneralNews() {
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_GENERAL);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 generalNewsData.postValue(Response.Success(result.body()))
@@ -150,6 +158,7 @@ class NewsRepository(private val service: ApiService) {
     suspend fun getBusinessNews(){
         try {
             val result = service.getNewsHeadlines(API_KEY,Constants.CATEGORY_BUSINESS);
+            Log.d("CheckingResponse",result.toString())
             if(result.body() != null)
             {
                 businessNewsData.postValue(Response.Success(result.body()))
