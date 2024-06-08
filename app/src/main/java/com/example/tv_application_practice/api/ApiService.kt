@@ -10,10 +10,7 @@ interface  ApiService {
 
 
     @GET("top-headlines?country=In")
-    suspend fun getNewsHeadlines(
-        @Query("apiKey") apiKey: String,
-        @Query("category") category: String
-    ): Response<DataModel>
+
 
 
 
